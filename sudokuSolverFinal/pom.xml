@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>uk.ac.rhul</groupId>
+    <artifactId>sudokuSolverFinal</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>sudokuSolverFinal</name>
+
+    <properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <organization>
+        <!-- Used as the 'Vendor' for JNLP generation -->
+        <name>Your Organisation</name>
+    </organization>
+
+
+	<dependencies>
+		<!-- Dependence 1 -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>13</version>
+		</dependency>
+		<!-- Dependence 2 -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>13</version>
+		</dependency>
+		<!-- Dependence 3 -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.4.0</version>
+			<scope>test</scope>
+		</dependency>
+		  <!-- Dependence 4 -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.3</version>
+  		</dependency>
+
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.15.1
+			</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.controlsfx</groupId>
+			<artifactId>controlsfx</artifactId>
+			<version>11.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+
+	</dependencies>
+
+    <build>
+        <resources>
+			<!-- Resource 1 -->
+			<resource>
+				<directory>src/main/java</directory>
+			</resource>
+			<!-- Resource 2 -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.fxml</include>
+					<include>**/*.css</include>
+					<include>**/*.txt</include>
+					<include>**/*.pdf</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+			<!-- Plugin 1 -->
+
+			<!-- Plugin 2 -->
+			<plugin>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
+				<version>0.0.4</version>
+				<configuration>
+					<mainClass>uk.ac.rhul.sudokuSolverFinal.MainApp</mainClass>
+				</configuration>
+				<executions>
+					<!-- Execution 1 -->
+					<execution>
+						<id>debug</id>
+						<configuration>
+							<options>
+								<option>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8001</option>
+							</options>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Plugin 3 -->
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>uk.ac.rhul.sudokuSolverFinal.MainApp</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+				<executions>
+					<!-- Execution 1 -->
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+    </build>
+
+</project>

@@ -1,0 +1,28 @@
+.button {
+	}
+	
+	
+.anchorpane{
+	
+}
+#solvebtn {
+  -fx-background-color: "white";
+  -fx-border: none;
+  -fx-color: "red";
+  -fx-font-family: "Lucida Console";
+  -fx-text-fill: "black";
+}
+
+.textfield {
+	-fx-background-color: "black";
+	
+	
+}
+
+#AnchorPane {
+	-fx-background-color: "black";
+}
+
+.line	{
+	-fx-stroke: "green";
+}
